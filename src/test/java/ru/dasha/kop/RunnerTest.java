@@ -10,8 +10,6 @@ import org.junit.runner.RunWith;
         features = "src/test/features",
         glue = "ru.dasha.kop",
         tags = "@all",
-        dryRun = false,
-        strict = false,
         snippets = SnippetType.UNDERSCORE
 )
 public class RunnerTest {
