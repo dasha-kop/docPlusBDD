@@ -46,8 +46,27 @@ this.metaClass.mixin(cucumber.api.groovy.EN)
     }
 
 }
-Тогда(~/^Выоводится сообщение "([^"]*)"$/) { String arg1 ->
+Тогда(~/^Выоводится сообщение Попробуем еще разочек$/) { ->
     System.out.println("Попробуйте еще разок")
+
+}
+
+Тогда(~/^Предлагают ввести заного$/) { ->
+    System.out.println("Попробуйте еще разок")
+    Scanner ine = new Scanner(System.in)
+    String str = ine.next()
+}
+
+Когда(~/^Пользователь ввел строку  "([^"]*)"$/) { String arg1 ->
+    try {
+        return Integer.valueOf(arg1)
+    } catch (NumberFormatException ex) {
+        System.out.println("Попробуем еще разочек")
+    }
+}
+
+Тогда(~/^Выоводится сообщение Попробуем еще разочек$/) { ->
+    System.out.println("Попробуем еще разочек")
 }
 Тогда(~/^Предлагают ввести заного$/) { ->
     System.out.println("Попробуйте еще разок")
